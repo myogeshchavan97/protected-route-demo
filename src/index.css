@@ -9,3 +9,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
