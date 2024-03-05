@@ -5,7 +5,6 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Orders from './components/Orders';
 import Payment from './components/Payment';
-import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,11 +18,9 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login updateStatus={updateStatus} />} />
-        <Route element={<ProtectedRoute isLoggedIn={isLoggedIn} />}>
-          <Route path='/orders' element={<Orders />} />
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/payment' element={<Payment />} />
-        </Route>
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/payment' element={<Payment />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </BrowserRouter>
